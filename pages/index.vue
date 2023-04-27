@@ -52,7 +52,7 @@
                         <v-sheet class="pa-8 bg-transparent">
                             <v-img
                                     min-height="350px"
-                                    src="/imgs/profile/profile.png"
+                                    src="./imgs/profile/profile.png"
                             >
                             </v-img>
                         </v-sheet>
@@ -268,13 +268,13 @@ import {mdiCog, mdiController, mdiGift, mdiMusic} from '@mdi/js'
 
 const items = [
     {
-        src: '/imgs/carousel/img1.jpg',
+        src: './imgs/carousel/img1.jpg',
     },
     {
-        src: '/imgs/carousel/img2.jpg',
+        src: './imgs/carousel/img2.jpg',
     },
     {
-        src: '/imgs/carousel/img3.jpg',
+        src: './imgs/carousel/img3.jpg',
     },
 ]
 
