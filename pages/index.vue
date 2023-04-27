@@ -268,13 +268,13 @@ import {mdiCog, mdiController, mdiGift, mdiMusic} from '@mdi/js'
 
 const items = [
     {
-        src: '/imgs/carousel/img1.png',
+        src: '/imgs/carousel/img1.jpg',
     },
     {
-        src: '/imgs/carousel/img2.png',
+        src: '/imgs/carousel/img2.jpg',
     },
     {
-        src: '/imgs/carousel/img3.png',
+        src: '/imgs/carousel/img3.jpg',
     },
 ]
 
