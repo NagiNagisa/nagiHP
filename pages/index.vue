@@ -11,6 +11,7 @@
                 hide-delimiters
         >
             <v-carousel-item
+                    eager
                     v-for="(item,i) in items"
                     :key="i"
             >
@@ -18,6 +19,7 @@
                         scale="0.1"
                 >
                 <v-img
+                        eager
                         height="100vh"
                         cover
                         :src="item.src"
