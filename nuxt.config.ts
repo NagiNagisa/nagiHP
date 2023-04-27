@@ -4,7 +4,8 @@ import vuetify from "vite-plugin-vuetify";
 
 export default defineNuxtConfig({
     app:{
-        baseURL: '/nagiHP',
+        // baseURL: '/nagiHP',
+        cdnURL: '/nagiHP'
     },
     typescript: {
         shim: false,
