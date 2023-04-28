@@ -278,12 +278,12 @@
 
     </v-sheet>
     <v-sheet
-        color="white"
-        class="py-16"
+            color="white"
+            class="py-16"
     >
         <v-container>
             <v-lazy
-                transition="slide-y-reverse-transition"
+                    transition="slide-y-reverse-transition"
             >
                 <h2 class="text-center text-h2 mb-16">
                     Latest Live Streaming
@@ -292,18 +292,18 @@
             <v-row>
                 <v-col cols="12" md="6" v-for="(item, idx) in rss.feed.entry.slice(0,4)">
                     <v-card
-                        :href="item['media:group']['media:content'].$.url"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                            :href="item['media:group']['media:content'].$.url"
+                            target="_blank"
+                            rel="noopener noreferrer"
                     >
                         <v-card-title>
                             {{ item.title }}
                         </v-card-title>
                         <v-card-text>
                             <v-img
-                                cover
-                                :aspect-ratio="16/9"
-                                :src="item['media:group']['media:thumbnail'].$.url"
+                                    cover
+                                    :aspect-ratio="16/9"
+                                    :src="item['media:group']['media:thumbnail'].$.url"
                             >
                             </v-img>
                         </v-card-text>
@@ -313,12 +313,113 @@
         </v-container>
     </v-sheet>
 
+    <v-sheet
+            color="#333"
+            class="py-16"
+    >
+        <v-container>
+            <v-lazy
+                    transition="slide-y-reverse-transition"
+            >
+                <h2 class="text-center text-white text-h2 mb-16">
+                    Gallery
+                </h2>
+            </v-lazy>
+            <v-row class="flex-wrap-reverse">
+                <v-col cols="12" sm="4" md="3" >
+                    <v-slide-group
+                        v-bind:style="{ 'height': $vuetify.display.smAndUp ? '600px' : '200px'}"
+                        v-model="model"
+                        class="pa-4"
+                        center-active
+                        :show-arrows="false"
+                        mandatory
+                        :direction="$vuetify.display.smAndUp ? 'vertical' : 'horizontal'"
+                    >
+                        <v-slide-group-item
+                            v-for="(item, idx) in galleryItems"
+                            :key="idx"
+                            v-slot="{ isSelected, toggle }"
+                        >
+                            <v-btn
+                                class="ma-4 align-self-center"
+                                :height="isSelected ? 125 : 100"
+                                :width="isSelected ? 125 : 100"
+                                color="white"
+                                v-bind:style="{'filter': isSelected ? 'grayscale(0%)' : 'grayscale(80%)' }"
+                            >
+                                <v-img
+                                    :height="isSelected ? 125 : 100"
+                                    :width="isSelected ? 125 : 100"
+                                    :src="item.src"
+                                    @click="toggle"
+                                >
+                                </v-img>
+                            </v-btn>
+                        </v-slide-group-item>
+                    </v-slide-group>
+                </v-col>
+                <v-col cols="12" sm="8" md="9">
+                    <v-carousel
+                            v-model="model"
+                            cycle
+                            hide-delimiters
+                    >
+                        <v-carousel-item
+                                v-for="(item, idx) in galleryItems"
+                                :src="item.src"
+
+                        >
+                        </v-carousel-item>
+                    </v-carousel>
+                </v-col>
+
+            </v-row>
+        </v-container>
+    </v-sheet>
+
+
 </template>
 
 <script setup lang="ts">
 import {mdiCog, mdiController, mdiGift, mdiMusic} from '@mdi/js'
 
 const {data: rss} = useFetch('/api/youtubeRss')
+
+const model = ref(null)
+
+const galleryItems = [
+    {
+        src: './imgs/gallery/img1.jpg',
+    },
+    {
+        src: './imgs/gallery/img2.jpg',
+    },
+    {
+        src: './imgs/gallery/img3.jpg',
+    },
+    {
+        src: './imgs/gallery/img4.jpg',
+    },
+    {
+        src: './imgs/gallery/img5.jpg',
+    },
+    {
+        src: './imgs/gallery/img6.jpg',
+    },
+    {
+        src: './imgs/gallery/img7.jpg',
+    },
+    {
+        src: './imgs/gallery/img8.jpg',
+    },
+    {
+        src: './imgs/gallery/img9.jpg',
+    },
+    {
+        src: './imgs/gallery/img10.jpg',
+    },
+]
 
 const items = [
     {
