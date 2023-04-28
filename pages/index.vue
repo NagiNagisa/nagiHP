@@ -30,6 +30,7 @@
         </v-carousel-item>
     </v-carousel>
     <v-sheet
+            id="profile"
             color="blue-lighten-5"
             class="py-16"
     >
@@ -93,6 +94,7 @@
         </v-container>
     </v-sheet>
     <v-sheet
+            id="activities"
             color="pink-lighten-3"
             style="background: linear-gradient(rgba(227, 242, 253,1), rgba(252, 228, 236,1))"
             class="py-16"
@@ -119,7 +121,7 @@
                             <v-card-text>
                                 <v-row no-gutters>
                                     <v-col cols="12">
-                                        <v-icon color="#555" size="64">
+                                        <v-icon color="#555" size="64" class="spin-animation">
                                             {{ mdiCog }}
                                         </v-icon>
 
@@ -160,7 +162,7 @@
                             <v-card-text>
                                 <v-row no-gutters>
                                     <v-col cols="12">
-                                        <v-icon color="pink-lighten-3" size="64">
+                                        <v-icon color="pink-lighten-3" size="64" class="shake-animation">
                                             {{ mdiMusic }}
                                         </v-icon>
 
@@ -198,7 +200,7 @@
                             <v-card-text>
                                 <v-row no-gutters>
                                     <v-col cols="12">
-                                        <v-icon color="orange-darken-3" size="64">
+                                        <v-icon color="orange-darken-3" size="64" class="vertical-animation">
                                             {{ mdiController }}
                                         </v-icon>
 
@@ -241,7 +243,7 @@
                             <v-card-text>
                                 <v-row no-gutters>
                                     <v-col cols="12">
-                                        <v-icon color="blue-lighten-1" size="64">
+                                        <v-icon color="blue-lighten-1" size="64" class="flip-animation">
                                             {{ mdiGift }}
                                         </v-icon>
 
@@ -278,6 +280,7 @@
 
     </v-sheet>
     <v-sheet
+            id="live"
             color="white"
             class="py-16"
     >
@@ -314,6 +317,7 @@
     </v-sheet>
 
     <v-sheet
+            id="gallery"
             color="#333"
             class="py-16"
     >
@@ -326,33 +330,33 @@
                 </h2>
             </v-lazy>
             <v-row class="flex-wrap-reverse">
-                <v-col cols="12" sm="4" md="3" >
+                <v-col cols="12" sm="4" md="3">
                     <v-slide-group
-                        v-bind:style="{ 'height': $vuetify.display.smAndUp ? '600px' : '200px'}"
-                        v-model="model"
-                        class="pa-4"
-                        center-active
-                        :show-arrows="false"
-                        mandatory
-                        :direction="$vuetify.display.smAndUp ? 'vertical' : 'horizontal'"
+                            v-bind:style="{ 'height': $vuetify.display.smAndUp ? '600px' : '200px'}"
+                            v-model="model"
+                            class="pa-4"
+                            center-active
+                            :show-arrows="false"
+                            mandatory
+                            :direction="$vuetify.display.smAndUp ? 'vertical' : 'horizontal'"
                     >
                         <v-slide-group-item
-                            v-for="(item, idx) in galleryItems"
-                            :key="idx"
-                            v-slot="{ isSelected, toggle }"
+                                v-for="(item, idx) in galleryItems"
+                                :key="idx"
+                                v-slot="{ isSelected, toggle }"
                         >
                             <v-btn
-                                class="ma-4 align-self-center"
-                                :height="isSelected ? 125 : 100"
-                                :width="isSelected ? 125 : 100"
-                                color="white"
-                                v-bind:style="{'filter': isSelected ? 'grayscale(0%)' : 'grayscale(80%)' }"
-                            >
-                                <v-img
+                                    class="ma-4 align-self-center"
                                     :height="isSelected ? 125 : 100"
                                     :width="isSelected ? 125 : 100"
-                                    :src="item.src"
-                                    @click="toggle"
+                                    color="white"
+                                    v-bind:style="{'filter': isSelected ? 'grayscale(0%)' : 'grayscale(80%)' }"
+                            >
+                                <v-img
+                                        :height="isSelected ? 125 : 100"
+                                        :width="isSelected ? 125 : 100"
+                                        :src="item.src"
+                                        @click="toggle"
                                 >
                                 </v-img>
                             </v-btn>
@@ -444,5 +448,76 @@ const items = [
   }
 
 }
+
+.spin-animation {
+    animation-name: spin;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.shake-animation {
+    animation-name: shake;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+
+.vertical-animation {
+    animation-name: vertical-move;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+
+.flip-animation {
+    animation-name: flip;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(5deg);
+    }
+}
+
+@keyframes vertical-move {
+    0% {
+        transform: translateY(5px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(5px);
+    }
+}
+
+
+@keyframes flip {
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
 
 </style>
