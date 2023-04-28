@@ -36,6 +36,8 @@
     >
         <v-container>
             <v-lazy
+                    min-height="60px"
+                    :options="{threshold: 1.0}"
                     transition="slide-y-reverse-transition"
             >
                 <h2 class="text-center text-h2 mb-16">
@@ -48,6 +50,8 @@
 
                 <v-col cols="12" md="6">
                     <v-lazy
+                            min-height="200px"
+                            :options="{threshold: 1.0}"
                             transition="slide-y-reverse-transition"
                     >
                         <v-sheet class="pa-8 bg-transparent">
@@ -63,6 +67,8 @@
                 <v-col cols="12" md="6" class="align-self-end">
 
                     <v-lazy
+                            min-height="200px"
+                            :options="{threshold: 1.0}"
                             transition="slide-y-reverse-transition"
                     >
                         <v-sheet class="pa-8 bg-transparent">
@@ -101,6 +107,8 @@
     >
         <v-container>
             <v-lazy
+                    min-height="60px"
+                    :options="{threshold: 1.0}"
                     transition="slide-y-reverse-transition"
             >
                 <h2 class="text-center text-h2 mb-16">
@@ -112,39 +120,47 @@
                     <v-hover
                             v-slot="{ isHovering, props }"
                     >
-                        <v-card
+
+                        <v-lazy
                                 height="100%"
-                                :elevation="isHovering ? 12 : 2"
-                                v-bind="props"
+                                min-height="100px"
+                                :options="{threshold: 1.0}"
+                                transition="slide-y-reverse-transition"
                         >
-                            <v-card-title>Software Engineering</v-card-title>
-                            <v-card-text>
-                                <v-row no-gutters>
-                                    <v-col cols="12">
-                                        <v-icon color="#555" size="64" class="spin-animation">
-                                            {{ mdiCog }}
-                                        </v-icon>
+                            <v-card
+                                    height="100%"
+                                    :elevation="isHovering ? 12 : 2"
+                                    v-bind="props"
+                            >
+                                <v-card-title>Software Engineering</v-card-title>
+                                <v-card-text>
+                                    <v-row no-gutters>
+                                        <v-col cols="12">
+                                            <v-icon color="#555" size="64" class="spin-animation">
+                                                {{ mdiCog }}
+                                            </v-icon>
 
-                                    </v-col>
-                                </v-row>
-                                <v-row>
-                                    <v-col>
-                                        <p>
-                                            Vtuber凪なぎさは、ソフトウェアエンジニアリングの才能も持ち合わせており、プログラミングを駆使して様々なプロジェクトに取り組んでいます。
-                                        </p>
-                                        <p>
-                                            スマホアプリ「フリース将棋」の開発を手がけ、将棋ファンに新たな魅力を提供。
-                                        </p>
-                                        <p>
-                                            また、視聴者向けに技術的な情報発信やチュートリアルも行い、多くの人々の創造力を刺激しています。
-                                            技術とエンターテイメントが融合した新しい世界を築いています。
-                                        </p>
-                                    </v-col>
-                                </v-row>
+                                        </v-col>
+                                    </v-row>
+                                    <v-row>
+                                        <v-col>
+                                            <p>
+                                                Vtuber凪なぎさは、ソフトウェアエンジニアリングの才能も持ち合わせており、プログラミングを駆使して様々なプロジェクトに取り組んでいます。
+                                            </p>
+                                            <p>
+                                                スマホアプリ「フリース将棋」の開発を手がけ、将棋ファンに新たな魅力を提供。
+                                            </p>
+                                            <p>
+                                                また、視聴者向けに技術的な情報発信やチュートリアルも行い、多くの人々の創造力を刺激しています。
+                                                技術とエンターテイメントが融合した新しい世界を築いています。
+                                            </p>
+                                        </v-col>
+                                    </v-row>
 
-                            </v-card-text>
+                                </v-card-text>
 
-                        </v-card>
+                            </v-card>
+                        </v-lazy>
                     </v-hover>
                 </v-col>
 
@@ -153,36 +169,43 @@
                     <v-hover
                             v-slot="{ isHovering, props }"
                     >
-                        <v-card
+                        <v-lazy
                                 height="100%"
-                                :elevation="isHovering ? 12 : 2"
-                                v-bind="props"
+                                min-height="100px"
+                                :options="{threshold: 1.0}"
+                                transition="slide-y-reverse-transition"
                         >
-                            <v-card-title>ピアノ / 弾き語り</v-card-title>
-                            <v-card-text>
-                                <v-row no-gutters>
-                                    <v-col cols="12">
-                                        <v-icon color="pink-lighten-3" size="64" class="shake-animation">
-                                            {{ mdiMusic }}
-                                        </v-icon>
+                            <v-card
+                                    height="100%"
+                                    :elevation="isHovering ? 12 : 2"
+                                    v-bind="props"
+                            >
+                                <v-card-title>ピアノ / 弾き語り</v-card-title>
+                                <v-card-text>
+                                    <v-row no-gutters>
+                                        <v-col cols="12">
+                                            <v-icon color="pink-lighten-3" size="64" class="shake-animation">
+                                                {{ mdiMusic }}
+                                            </v-icon>
 
-                                    </v-col>
-                                </v-row>
-                                <v-row>
-                                    <v-col>
-                                        <p>
-                                            ピアノ演奏や弾き語り配信活動をしています。繊細で美しいピアノの旋律や、心に響く歌声で視聴者を魅了。
-                                        </p>
-                                        <p>
-                                            凪なぎさの音楽活動は、感動と癒しを届けるだけでなく、視聴者とのつながりを深める大切な要素となっており、彼女の多才ぶりを際立たせています。
-                                        </p>
+                                        </v-col>
+                                    </v-row>
+                                    <v-row>
+                                        <v-col>
+                                            <p>
+                                                ピアノ演奏や弾き語り配信活動をしています。繊細で美しいピアノの旋律や、心に響く歌声で視聴者を魅了。
+                                            </p>
+                                            <p>
+                                                凪なぎさの音楽活動は、感動と癒しを届けるだけでなく、視聴者とのつながりを深める大切な要素となっており、彼女の多才ぶりを際立たせています。
+                                            </p>
 
-                                    </v-col>
-                                </v-row>
+                                        </v-col>
+                                    </v-row>
 
-                            </v-card-text>
+                                </v-card-text>
 
-                        </v-card>
+                            </v-card>
+                        </v-lazy>
                     </v-hover>
                 </v-col>
 
@@ -191,41 +214,48 @@
                     <v-hover
                             v-slot="{ isHovering, props }"
                     >
-                        <v-card
+                        <v-lazy
                                 height="100%"
-                                :elevation="isHovering ? 12 : 2"
-                                v-bind="props"
+                                min-height="100px"
+                                :options="{threshold: 1.0}"
+                                transition="slide-y-reverse-transition"
                         >
-                            <v-card-title>Games</v-card-title>
-                            <v-card-text>
-                                <v-row no-gutters>
-                                    <v-col cols="12">
-                                        <v-icon color="orange-darken-3" size="64" class="vertical-animation">
-                                            {{ mdiController }}
-                                        </v-icon>
+                            <v-card
+                                    height="100%"
+                                    :elevation="isHovering ? 12 : 2"
+                                    v-bind="props"
+                            >
+                                <v-card-title>Games</v-card-title>
+                                <v-card-text>
+                                    <v-row no-gutters>
+                                        <v-col cols="12">
+                                            <v-icon color="orange-darken-3" size="64" class="vertical-animation">
+                                                {{ mdiController }}
+                                            </v-icon>
 
-                                    </v-col>
-                                </v-row>
-                                <v-row>
-                                    <v-col>
-                                        <p>
-                                            様々なジャンルのゲーム実況を行っています。
-                                        </p>
-                                        <p>
-                                            彼女の鋭い観察力と独自の解説で、視聴者はゲームの面白さをより深く楽しめます。
-                                        </p>
-                                        <p>
-                                            視聴者と一緒になってゲームを楽しみ、時には対戦や協力プレイを通じてコミュニケーションを図ります。
-                                        </p>
-                                        <p>
-                                            視聴者皆さんと楽しい時間を共有する場となっています。
-                                        </p>
-                                    </v-col>
-                                </v-row>
+                                        </v-col>
+                                    </v-row>
+                                    <v-row>
+                                        <v-col>
+                                            <p>
+                                                様々なジャンルのゲーム実況を行っています。
+                                            </p>
+                                            <p>
+                                                彼女の鋭い観察力と独自の解説で、視聴者はゲームの面白さをより深く楽しめます。
+                                            </p>
+                                            <p>
+                                                視聴者と一緒になってゲームを楽しみ、時には対戦や協力プレイを通じてコミュニケーションを図ります。
+                                            </p>
+                                            <p>
+                                                視聴者皆さんと楽しい時間を共有する場となっています。
+                                            </p>
+                                        </v-col>
+                                    </v-row>
 
-                            </v-card-text>
+                                </v-card-text>
 
-                        </v-card>
+                            </v-card>
+                        </v-lazy>
                     </v-hover>
                 </v-col>
 
@@ -234,44 +264,51 @@
                     <v-hover
                             v-slot="{ isHovering, props }"
                     >
-                        <v-card
+                        <v-lazy
                                 height="100%"
-                                :elevation="isHovering ? 12 : 2"
-                                v-bind="props"
+                                min-height="100px"
+                                :options="{threshold: 1.0}"
+                                transition="slide-y-reverse-transition"
                         >
-                            <v-card-title>Goods</v-card-title>
-                            <v-card-text>
-                                <v-row no-gutters>
-                                    <v-col cols="12">
-                                        <v-icon color="blue-lighten-1" size="64" class="flip-animation">
-                                            {{ mdiGift }}
-                                        </v-icon>
+                            <v-card
+                                    height="100%"
+                                    :elevation="isHovering ? 12 : 2"
+                                    v-bind="props"
+                            >
+                                <v-card-title>Goods</v-card-title>
+                                <v-card-text>
+                                    <v-row no-gutters>
+                                        <v-col cols="12">
+                                            <v-icon color="blue-lighten-1" size="64" class="flip-animation">
+                                                {{ mdiGift }}
+                                            </v-icon>
 
-                                    </v-col>
-                                </v-row>
-                                <v-row>
-                                    <v-col>
-                                        <p>
-                                            ファンに向けてのグッズ販売を行っています
-                                        </p>
-                                        <p>
-                                            Boothにてアクリルキーホルダー、アクリルフィギュアの販売中
-                                        </p>
-                                        <nuxt-link
-                                                class="text-decoration-none"
-                                                target="_blank"
-                                                href="https://naginagisa.booth.pm/"
+                                        </v-col>
+                                    </v-row>
+                                    <v-row>
+                                        <v-col>
+                                            <p>
+                                                ファンに向けてのグッズ販売を行っています
+                                            </p>
+                                            <p>
+                                                Boothにてアクリルキーホルダー、アクリルフィギュアの販売中
+                                            </p>
+                                            <nuxt-link
+                                                    class="text-decoration-none"
+                                                    target="_blank"
+                                                    href="https://naginagisa.booth.pm/"
 
-                                        >
-                                            Boothのページはこちら
-                                        </nuxt-link>
+                                            >
+                                                Boothのページはこちら
+                                            </nuxt-link>
 
-                                    </v-col>
-                                </v-row>
+                                        </v-col>
+                                    </v-row>
 
-                            </v-card-text>
+                                </v-card-text>
 
-                        </v-card>
+                            </v-card>
+                        </v-lazy>
                     </v-hover>
                 </v-col>
             </v-row>
@@ -286,6 +323,8 @@
     >
         <v-container>
             <v-lazy
+                    min-height="60px"
+                    :options="{threshold: 1.0}"
                     transition="slide-y-reverse-transition"
             >
                 <h2 class="text-center text-h2 mb-16">
@@ -294,6 +333,11 @@
             </v-lazy>
             <v-row>
                 <v-col cols="12" md="6" v-for="(item, idx) in rss.feed.entry.slice(0,4)">
+                    <v-lazy
+                        min-height="100px"
+                        :options="{threshold: 1.0}"
+                        transition="slide-y-reverse-transition"
+                    >
                     <v-card
                             :href="item['media:group']['media:content'].$.url"
                             target="_blank"
@@ -311,6 +355,7 @@
                             </v-img>
                         </v-card-text>
                     </v-card>
+                    </v-lazy>
                 </v-col>
             </v-row>
         </v-container>
@@ -323,6 +368,8 @@
     >
         <v-container>
             <v-lazy
+                    min-height="60px"
+                    :options="{threshold: 1.0}"
                     transition="slide-y-reverse-transition"
             >
                 <h2 class="text-center text-white text-h2 mb-16">
@@ -444,79 +491,79 @@ const items = [
 .slide-y-reverse-transition {
 
   &-leave-active, &-enter-active, &-enter-to, &-leave, &-leave-to {
-    transition-duration: 3.0s !important;
+    transition-duration: 2.5s !important;
   }
 
 }
 
 .spin-animation {
-    animation-name: spin;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+  animation-name: spin;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
 .shake-animation {
-    animation-name: shake;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+  animation-name: shake;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
 
 .vertical-animation {
-    animation-name: vertical-move;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+  animation-name: vertical-move;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
 
 .flip-animation {
-    animation-name: flip;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+  animation-name: flip;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
 @keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes shake {
-    0% {
-        transform: rotate(5deg);
-    }
-    50% {
-        transform: rotate(-5deg);
-    }
-    100% {
-        transform: rotate(5deg);
-    }
+  0% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(5deg);
+  }
 }
 
 @keyframes vertical-move {
-    0% {
-        transform: translateY(5px);
-    }
-    50% {
-        transform: translateY(-5px);
-    }
-    100% {
-        transform: translateY(5px);
-    }
+  0% {
+    transform: translateY(5px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(5px);
+  }
 }
 
 
 @keyframes flip {
-    100% {
-        transform: rotateY(360deg);
-    }
+  100% {
+    transform: rotateY(360deg);
+  }
 }
 
 
