@@ -108,12 +108,12 @@
             <v-row>
                 <v-col cols="12" sm="6">
                     <v-hover
-                        v-slot="{ isHovering, props }"
+                            v-slot="{ isHovering, props }"
                     >
                         <v-card
-                            height="100%"
-                            :elevation="isHovering ? 12 : 2"
-                            v-bind="props"
+                                height="100%"
+                                :elevation="isHovering ? 12 : 2"
+                                v-bind="props"
                         >
                             <v-card-title>Software Engineering</v-card-title>
                             <v-card-text>
@@ -149,12 +149,12 @@
 
                 <v-col cols="12" sm="6">
                     <v-hover
-                        v-slot="{ isHovering, props }"
+                            v-slot="{ isHovering, props }"
                     >
                         <v-card
-                            height="100%"
-                            :elevation="isHovering ? 12 : 2"
-                            v-bind="props"
+                                height="100%"
+                                :elevation="isHovering ? 12 : 2"
+                                v-bind="props"
                         >
                             <v-card-title>ピアノ / 弾き語り</v-card-title>
                             <v-card-text>
@@ -185,15 +185,14 @@
                 </v-col>
 
 
-
                 <v-col cols="12" sm="6">
                     <v-hover
-                        v-slot="{ isHovering, props }"
+                            v-slot="{ isHovering, props }"
                     >
                         <v-card
-                            height="100%"
-                            :elevation="isHovering ? 12 : 2"
-                            v-bind="props"
+                                height="100%"
+                                :elevation="isHovering ? 12 : 2"
+                                v-bind="props"
                         >
                             <v-card-title>Games</v-card-title>
                             <v-card-text>
@@ -229,16 +228,14 @@
                 </v-col>
 
 
-
-
                 <v-col cols="12" sm="6">
                     <v-hover
-                        v-slot="{ isHovering, props }"
+                            v-slot="{ isHovering, props }"
                     >
                         <v-card
-                            height="100%"
-                            :elevation="isHovering ? 12 : 2"
-                            v-bind="props"
+                                height="100%"
+                                :elevation="isHovering ? 12 : 2"
+                                v-bind="props"
                         >
                             <v-card-title>Goods</v-card-title>
                             <v-card-text>
@@ -259,9 +256,9 @@
                                             Boothにてアクリルキーホルダー、アクリルフィギュアの販売中
                                         </p>
                                         <nuxt-link
-                                            class="text-decoration-none"
-                                            target="_blank"
-                                            href="https://naginagisa.booth.pm/"
+                                                class="text-decoration-none"
+                                                target="_blank"
+                                                href="https://naginagisa.booth.pm/"
 
                                         >
                                             Boothのページはこちら
@@ -280,11 +277,48 @@
         </v-container>
 
     </v-sheet>
+    <v-sheet
+        color="white"
+        class="py-16"
+    >
+        <v-container>
+            <v-lazy
+                transition="slide-y-reverse-transition"
+            >
+                <h2 class="text-center text-h2 mb-16">
+                    Latest Live Streaming
+                </h2>
+            </v-lazy>
+            <v-row>
+                <v-col cols="12" md="6" v-for="(item, idx) in rss.feed.entry.slice(0,4)">
+                    <v-card
+                        :href="item['media:group']['media:content'].$.url"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <v-card-title>
+                            {{ item.title }}
+                        </v-card-title>
+                        <v-card-text>
+                            <v-img
+                                cover
+                                :aspect-ratio="16/9"
+                                :src="item['media:group']['media:thumbnail'].$.url"
+                            >
+                            </v-img>
+                        </v-card-text>
+                    </v-card>
+                </v-col>
+            </v-row>
+        </v-container>
+    </v-sheet>
 
 </template>
 
 <script setup lang="ts">
 import {mdiCog, mdiController, mdiGift, mdiMusic} from '@mdi/js'
+
+const {data: rss} = useFetch('/api/youtubeRss')
 
 const items = [
     {
