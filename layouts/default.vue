@@ -1,13 +1,13 @@
 <template>
     <v-app>
         <v-app-bar
-                density="prominent"
+                density="default"
                 class="bg-transparent"
                 flat
         >
             <v-app-bar-title>
                 <v-img
-                        height="128"
+                        height="68"
                         width="250"
                         src="./imgs/logo/logo.png"
                 >
