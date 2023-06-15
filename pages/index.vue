@@ -486,8 +486,15 @@ const items = [
 
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
+/* カルーセル上でgradientの効果が消えたための対処 */
+.v-img__gradient {
+  z-index: 1;
+}
 
+</style>
+
+<style scoped lang="scss">
 .slide-y-reverse-transition {
 
   &-leave-active, &-enter-active, &-enter-to, &-leave, &-leave-to {
